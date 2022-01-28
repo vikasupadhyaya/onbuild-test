@@ -5,9 +5,11 @@ MAINTAINER abc.example.com
 ENV DOCROOT=/var/www/html 
 
 
-RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd && \
-      yum clean all --disableplugin=subscription-manager -y && \
-      echo "Hello OpenShift from the httpd-parent container!" > ${DOCROOT}/index.html
+RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd 
+RUN   yum install php
+RUN  yum install java*
+RUN   yum clean all --disableplugin=subscription-manager -y 
+RUN  echo "Hello OpenShift from the httpd-parent container!" > ${DOCROOT}/index.html
 
 ONBUILD COPY src/ ${DOCROOT}/
 

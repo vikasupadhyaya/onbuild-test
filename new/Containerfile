@@ -1,0 +1,3 @@
+FROM localhost/http-parent-image-02
+
+
