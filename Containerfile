@@ -6,8 +6,8 @@ ENV DOCROOT=/var/www/html
 
 
 RUN   yum install -y --nodocs --disableplugin=subscription-manager httpd 
-RUN   yum install php
-RUN  yum install java*
+RUN   yum install php -y
+RUN  yum install java* -y
 RUN   yum clean all --disableplugin=subscription-manager -y 
 RUN  echo "Hello OpenShift from the httpd-parent container!" > ${DOCROOT}/index.html
 
